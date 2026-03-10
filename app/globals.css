@@ -1,0 +1,193 @@
+@import "tailwindcss";
+
+:root {
+  --primary-bg: #0A0A0F;
+  --secondary-bg: #111118;
+  --card-bg: #16161E;
+  --surface: #1E1E2A;
+  --accent-primary: #4EFFC5;
+  --accent-secondary: #7B5CF5;
+  --accent-glow: rgba(78, 255, 197, 0.5);
+  --accent-warm: #FF6B35;
+  --text-primary: #F0F0FF;
+  --text-secondary: #9898AA;
+  --text-muted: #555568;
+  --gold: #FFD166;
+  --border-subtle: #2A2A3A;
+  --border-glow: rgba(78, 255, 197, 0.19);
+  --neon-glow: 0 0 20px rgba(78, 255, 197, 0.5), 0 0 60px rgba(78, 255, 197, 0.13);
+}
+
+html {
+  scroll-behavior: smooth;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--primary-bg);
+  color: var(--text-primary);
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Fonts */
+.font-display {
+  font-family: 'Syne', sans-serif;
+}
+
+.font-body {
+  font-family: 'DM Sans', sans-serif;
+}
+
+.font-arabic {
+  font-family: 'Noto Kufi Arabic', sans-serif;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glow Box */
+.glow-box {
+  box-shadow: var(--neon-glow);
+}
+
+/* Glass */
+.glass {
+  background: rgba(22, 22, 30, 0.72);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border: 1px solid var(--border-subtle);
+}
+
+/* Floating animation */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(-1deg);
+  }
+
+  50% {
+    transform: translateY(-15px) rotate(1deg);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Pulse glow */
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(78, 255, 197, 0);
+  }
+
+  50% {
+    box-shadow: 0 0 0 12px rgba(78, 255, 197, 0.15);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Shimmer sweep for buttons */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Marquee */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Ping pulse for location dots */
+@keyframes ping-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+/* Sound wave animation */
+@keyframes sound-wave {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+/* Battery fill */
+@keyframes battery-fill {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 80%;
+  }
+}
+
+/* Count up - we handle this in JS */
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--primary-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-subtle);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Selection */
+::selection {
+  background: rgba(78, 255, 197, 0.3);
+  color: var(--text-primary);
+}
