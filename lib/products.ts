@@ -39,45 +39,36 @@ export const products: Product[] = [
                 name: "Bleu",
                 hex: "#4A90D9",
                 images: [
-                    "/images/balise-blue-1.png",
-                    "/images/balise-blue-2.png",
-                    "/images/balise-blue-3.png",
+                    "/images/balise-blue-1.avif",
+                    "/images/balise-blue-2.avif",
                 ],
             },
             {
                 name: "Noir",
                 hex: "#1A1A1A",
                 images: [
-                    "/images/balise-black-1.png",
-                    "/images/balise-black-2.png",
-                    "/images/balise-black-3.png",
+                    "/images/balise-black-1.avif",
                 ],
             },
             {
                 name: "Rose",
                 hex: "#E8A0BF",
                 images: [
-                    "/images/balise-pink-1.png",
-                    "/images/balise-pink-2.png",
-                    "/images/balise-pink-3.png",
+                    "/images/balise-pink-1.avif",
                 ],
             },
             {
                 name: "Violet",
                 hex: "#7B5CF5",
                 images: [
-                    "/images/balise-purple-1.png",
-                    "/images/balise-purple-2.png",
-                    "/images/balise-purple-3.png",
+                    "/images/balise-purple-1.avif",
                 ],
             },
             {
                 name: "Blanc",
                 hex: "#F0F0F0",
                 images: [
-                    "/images/balise-white-1.png",
-                    "/images/balise-white-2.png",
-                    "/images/balise-white-3.png",
+                    "/images/balise-white-1.avif",
                 ],
             },
         ],
@@ -104,27 +95,22 @@ export const products: Product[] = [
                 name: "Vert",
                 hex: "#4EFFC5",
                 images: [
-                    "/images/card-green-1.png",
-                    "/images/card-green-2.png",
-                    "/images/card-green-3.png",
+                    "/images/card-green-1.avif",
+                    "/images/card-green-2.avif",
                 ],
             },
             {
                 name: "Blanc",
                 hex: "#F0F0F0",
                 images: [
-                    "/images/card-white-1.png",
-                    "/images/card-white-2.png",
-                    "/images/card-white-3.png",
+                    "/images/card-white-1.avif",
                 ],
             },
             {
                 name: "Noir",
                 hex: "#1A1A1A",
                 images: [
-                    "/images/card-black-1.png",
-                    "/images/card-black-2.png",
-                    "/images/card-black-3.png",
+                    "/images/card-black-1.avif",
                 ],
             },
         ],

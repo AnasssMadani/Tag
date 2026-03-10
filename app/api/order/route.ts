@@ -1,7 +1,5 @@
 import { NextResponse } from "next/server";
 
-const WEB3FORMS_KEY = process.env.WEB3FORMS_ACCESS_KEY || "";
-
 export async function POST(request: Request) {
     try {
         const body = await request.json();
@@ -38,29 +36,24 @@ export async function POST(request: Request) {
         `.trim();
 
         // Send via Web3Forms
+        const formData = new FormData();
+        formData.append("access_key", "5839d373-08c6-4441-919c-85b61f6bd5ea");
+        formData.append("subject", `🛒 Nouvelle commande ${orderId} — ${product || "Smart Finder"}`);
+        formData.append("from_name", "SmartFinder Maroc");
+        formData.append("name", name);
+        formData.append("phone", phone);
+        formData.append("city", city);
+        formData.append("message", emailBody);
+
         const emailRes = await fetch("https://api.web3forms.com/submit", {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                access_key: WEB3FORMS_KEY,
-                subject: `🛒 Nouvelle commande ${orderId} — ${product || "Smart Finder"}`,
-                from_name: "SmartFinder Maroc",
-                to: "monissisme12@gmail.com",
-                message: emailBody,
-                // Extra fields for Web3Forms dashboard
-                name,
-                phone,
-                city,
-                product: product || "Smart Finder",
-                quantity: quantity || 1,
-            }),
+            body: formData,
         });
 
         const emailData = await emailRes.json();
 
         if (!emailData.success) {
             console.error("Web3Forms error:", emailData);
-            // Still return success to the customer — log the order
             console.log("=== ORDER (email failed) ===\n", emailBody);
         }
 
